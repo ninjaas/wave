@@ -1,7 +1,21 @@
 {%extends 'base.html' %}
+
+
 {%block title%} {{title}} - User {%endblock%}
+
+
 {%block content%}
-{% for user in users %}
-<li>{{user.username}}</li>
-{% endfor %}
+    {% for user in users %}
+    <div class="col-sm-4">
+        <div class="widget-container widget-avatar boxed boxed-yellow">
+            <div class="inner">
+                <h5>{{user.username}}</h5>
+                <span class="subtitle">{{user.position}}</span>
+                <div class="avatar"><img src="static/img/users/{{user.picture}}" alt=""></div>
+                <div class="followers"><span class="counter">{{user.followers}}</span> followers</div>
+                <a href="#" class="btn btn-brown btn-follow" hidefocus="true" style="outline: none; opacity: 1;"><span><i></i>Follow</span></a>
+            </div>
+        </div> 
+    </div>
+    {% endfor %}
 {%endblock%}

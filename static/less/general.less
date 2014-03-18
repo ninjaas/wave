@@ -1,0 +1,145 @@
+/*
+  - General Styles
+  - Clear Floats
+  - Boxes
+  - Header (Kit Name)
+  - Dividers
+  - Layout on Index Page
+*/
+
+
+
+/*-----------------------------------*/
+/* General Styles */
+/*-----------------------------------*/
+
+body {
+  font-family: @font-family;
+  font-size: @font-size;
+  font-weight: 300;
+  color: @font-color;
+  -webkit-font-smoothing: subpixel-antialiased;
+  position:relative;
+  background-color: rgb(0, 157, 158) !important;
+}
+::-moz-selection {
+  background: @turquoise;
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: @turquoise;
+  color: #fff;
+  text-shadow: none;
+}
+
+a{color: @link-color;}
+
+a:hover,
+a:focus {
+  color: @link-color-hover;
+  text-decoration: none;
+}
+a:active{background-color: transparent;}
+
+input, textarea, input[type="submit"]:focus, div {
+  outline: 0 none;
+  font-family: @font-family;
+}
+button, input, select, textarea {vertical-align: top; margin: 0;}
+
+.alpha{margin-left:0 !important;}
+.omega{margin-right:0 !important;}
+
+/*-----------------------------------*/
+/* Clear Floats */
+/*-----------------------------------*/
+
+html body * span.clear,
+html body * div.clear,
+html body * li.clear,
+html body * dd.clear {
+  background: none;
+  border: 0;
+  clear: both;
+  display: block;
+  float: none;
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+
+/*-----------------------------------*/
+/* Boxes */
+/*-----------------------------------*/
+
+header{padding: 100px 0;}
+.content, .sidebar{padding: 50px 0;}
+.boxed, a.boxed {position:relative; background: @white; margin-bottom:30px;}
+.boxed-blue, a.boxed-blue{background: @blue;}
+.boxed-green, a.boxed-green{background: @green;}
+.boxed-red, a.boxed-red{background: @red;}
+.boxed-yellow, a.boxed-yellow{background: @yellow;}
+.boxed-turquoise, a.boxed-turquoise{background: @turquoise;}
+.boxed-black, a.boxed-black{background: @black;}
+.boxed-brown, a.boxed-brown{background: @brown;}
+
+.margin-0{margin-bottom:0 !important;}
+.margin-10{margin-bottom:10px !important;}
+.margin-20{margin-bottom:20px !important;}
+.margin-30{margin-bottom:30px !important;}
+.margin-40{margin-bottom:40px !important;}
+.margin-50{margin-bottom:50px !important;}
+
+/*-----------------------------------*/
+/* Header (Kit Name) */
+/*-----------------------------------*/
+
+.pixelkit-header{padding: 50px 0 5px;}
+
+.pixelkit-header h1, .pixelkit-header h2{
+  text-align: center;
+  font-size: @font-size * 3.2;
+  margin-bottom: 2px;
+  position: relative;
+  text-transform: uppercase;
+  color:#fff;
+}
+.pixelkit-header h2{font-size: @font-size * 1.6;}
+
+/*-----------------------------------*/
+/* Dividers */
+/*-----------------------------------*/
+
+.divider{border-top:1px solid #e5e5e5; margin:15px 0;}
+.divider.dashed{border-top:1px dashed #e5e5e5;}
+
+/*-------------------------------------------*/
+/* Layout on Index Page */
+/*-------------------------------------------*/
+
+.controls .inner{padding: 18px 50px 39px;}
+
+@media (max-width: 991px){
+  .controls .inner{padding: 0px 20px 25px;}
+}
+.checkBoxes{float: right; width: 45%; padding-top: 8px;}
+.checkBoxes .custom-checkbox label, .checkBoxes .custom-radio label {padding-left: 27px;}

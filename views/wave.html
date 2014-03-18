@@ -4,10 +4,23 @@
 
 {% block content %}
 {% for wave in waves %}
-    <h1>{{wave.title}} - <small>{{wave.user}}</small></h1>
-    {% if wave.ideas %}
-        <ul> {% for idea in wave.ideas %} <li>{{idea}}</li> {%endfor%}</ul>
-    {% else %}
-    {% endif %}
+    <div class="col-sm-6">
+        <div class="post-item post-quote boxed">
+            <span class="post-label"></span>
+            <div class="inner">
+                <div class="post-title"><h2><a href="#" hidefocus="true" style="outline: none;">{{wave.title}}</a></h2></div>
+                <div class="post-desc">
+                    {% if wave.ideas %}
+                        <ul> {% for idea in wave.ideas %} <li>{{idea}}</li> {%endfor%}</ul>
+                    {% else %}
+                    {% endif %}
+                </div>
+            </div>
+            <ul class="post-meta-links clearfix">
+                <li class="post-meta post-author first"><a href="#" hidefocus="true" style="outline: none;"><span>{{wave.user}}</span></a></li>
+                <li class="post-meta post-date icon2 last"><a href="#" hidefocus="true" style="outline: none;"><span>Jul 15, 2013</span></a></li>
+            </ul>
+        </div>
+    </div>
 {% endfor %}
 {% endblock %}

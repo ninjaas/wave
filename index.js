@@ -8,11 +8,12 @@ app.engine('html', cons.swig);
 // set .html as the default extension 
 app.set('view engine', 'swig');
 app.set('views', __dirname + '/views');
+app.use('/static', express.static(__dirname + '/static'));
 
 var users = [];
-users.push({ username: 'tobi' });
-users.push({ username: 'loki' });
-users.push({ username: 'jane' });
+users.push({ username: 'tobi', position: "CEO", followers : "127", picture : "latest1.png" });
+users.push({ username: 'loki', position: "CFO", followers : "115", picture : "latest2.png"  });
+users.push({ username: 'jane', position: "CTO", followers : "153", picture : "latest3.png"  });
 
 var waves = [];
 waves.push({

@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <title>{% block title %}Wave{% endblock %}</title>
 {% block head %}
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<!-- main JS libs -->
+<link rel="stylesheet" type="text/css" href="static/style.css">
 {% endblock %}
-<div class="row">
-  <div class="col-md-4">
-      <div class="row">
-        <div class="col-md-12">
-            <h1>Wave</h1>
+</head>
+<div class="body_wrap">
+  <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+              <div id="topmenu">
+                        <ul class="dropdown clearfix boxed boxed-blue">
+                            <li class="link-more first"><a href="#" hidefocus="true" style="outline: none;"><i></i></a></li>
+                            <li class="menu-level-0"><a href="/" hidefocus="true" style="outline: none;"><span>Home</span></a></li>
+                            <li class="menu-level-0"><a href="/waves" hidefocus="true" style="outline: none;"><span>Wave</span></a></li>
+                            <li class="menu-level-0 parent"><a href="/users" hidefocus="true" style="outline: none;"><span>Co-Workers</span></a>
+                            </li>
+                            <li class="menu-level-0 parent"><a href="#" hidefocus="true" style="outline: none;"><span>Trending</span></a>
+                            </li>
+                            <li class="menu-search last">
+                                <form id="searchForm" class="menu-search-form" method="post">
+                                    <input type="text" name="search" value="" class="menu-search-field" placeholder="Search the website" hidefocus="true" style="outline: none;">
+                                    <input type="submit" value="" class="btn menu-search-submit" name="search-send" hidefocus="true" style="outline: none; opacity: 1;">
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-            <ul class="nav nav-pills nav-stacked">
-            <li><a href="/">Home</a></li>
-            <li><a href="/users">Users</a></li>
-            <li><a href="/waves">Waves</a></li>
-            </ul>
+        <!-- content -->
+        <div class="row " role="main">
+          <div class="col-md-12">{% block content %}{% endblock %}</div>
         </div>
-      </div>
   </div>
-  <div class="col-md-8">{% block content %}{% endblock %}</div>
 </div>
