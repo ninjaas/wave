@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{{title}} - Waves{% endblock %}
+
+{% block content %}
+{% for wave in waves %}
+    <h1>{{wave.title}} - <small>{{wave.user}}</small></h1>
+    {% if wave.ideas %}
+        <ul> {% for idea in wave.ideas %} <li>{{idea}}</li> {%endfor%}</ul>
+    {% else %}
+    {% endif %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>{% block title %}Wave{% endblock %}</title>
+{% block head %}
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+{% endblock %}
+<div class="row">
+  <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12">
+            <h1>Wave</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+            <ul class="nav nav-pills nav-stacked">
+            <li><a href="/">Home</a></li>
+            <li><a href="/users">Users</a></li>
+            <li><a href="/waves">Waves</a></li>
+            </ul>
+        </div>
+      </div>
+  </div>
+  <div class="col-md-8">{% block content %}{% endblock %}</div>
+</div>
