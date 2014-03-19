@@ -15,6 +15,27 @@ users.push({ username: 'tobi', position: "CEO", followers : "127", picture : "la
 users.push({ username: 'loki', position: "CFO", followers : "115", picture : "latest2.png"  });
 users.push({ username: 'jane', position: "CTO", followers : "153", picture : "latest3.png"  });
 
+var chat = {
+  topic: {
+    type: "Wave",
+    title: "Startup to Successful Business",
+    link: "#",
+  },
+  messages: [
+    {
+      user: "tobi",
+      message:"Are we meeting today?"
+    },{
+      user:"loki",
+      message:"yes, what time suits you?"
+    },{
+      user:"loki",
+      message:"I was thinking after lunch, I have a meeting in the morning"
+    }
+  ]
+}
+
+
 var waves = [];
 waves.push({
   title : "Startup to Successful Business",
@@ -35,21 +56,24 @@ waves.push({
 app.get('/', function(req, res){
   res.render('index.html', {
     title: "Wave",
-    body: "Hello world"
+    body: "Hello world",
+    chat: chat
   });
 });
 
 app.get('/users', function(req, res){
   res.render('users.html', {
     title: 'Users',
-    users: users
+    users: users,
+    chat: chat
   });
 });
 
 app.get('/waves',function(req, res){
   res.render('wave.html',{
     title: 'Waves',
-    waves: waves
+    waves: waves,
+    chat: chat
   })
 })
 

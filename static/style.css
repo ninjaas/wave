@@ -1,4 +1,5 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800");
+@import 'http://fonts.googleapis.com/css?family=Noto+Sans';
 /*
 Kit Name: Modern Touch
 Kit URI: http://pixelkit.com/kits/flat-ui-kit
@@ -8890,4 +8891,156 @@ a.dropdown-toggle:after {
   color: #e87352;
   line-height: 20px;
   margin: 0;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(25, 147, 147, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(25, 0, 0, 0.4);
+}
+.chat-thread {
+  margin: 24px auto 0 auto;
+  padding: 0 20px 0 0;
+  list-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 420px;
+}
+.chat-thread a {
+  color: #fff;
+}
+.chat-thread li {
+  position: relative;
+  clear: both;
+  display: inline-block;
+  padding: 16px 40px 16px 20px;
+  margin: 0 0 20px 0;
+  font: 16px/20px 'Noto Sans', sans-serif;
+  border-radius: 10px;
+  background-color: rgba(25, 0, 0, 0.4);
+}
+.chat-thread li.topic {
+  background-color: rgba(25, 0, 0, 0.8);
+}
+/* Chat - Avatar */
+.chat-thread li:before {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  content: '';
+}
+/* Chat - Speech Bubble Arrow */
+.chat-thread li:after {
+  position: absolute;
+  top: 15px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 15px solid rgba(25, 0, 0, 0.4);
+}
+.chat-thread li.you {
+  animation: show-chat-odd 0.15s 1 ease-in;
+  -moz-animation: show-chat-odd 0.15s 1 ease-in;
+  -webkit-animation: show-chat-odd 0.15s 1 ease-in;
+  float: right;
+  margin-right: 80px;
+  color: #0C7;
+  background-color: rgba(25, 0, 0, 0.4);
+}
+.chat-thread li.you:before {
+  right: -80px;
+  background-image: url(img/users/latest1.png);
+  background-size: cover;
+}
+.chat-thread li.you:after {
+  border-right: 15px solid transparent;
+  right: -15px;
+}
+.chat-thread li.they {
+  animation: show-chat-even 0.15s 1 ease-in;
+  -moz-animation: show-chat-even 0.15s 1 ease-in;
+  -webkit-animation: show-chat-even 0.15s 1 ease-in;
+  float: left;
+  margin-left: 80px;
+  color: #ffd;
+  background-color: rgba(25, 0, 0, 0.2);
+}
+.chat-thread li.they:before {
+  left: -80px;
+  background-image: url(img/users/latest2.png);
+  background-size: cover;
+}
+.chat-thread li.they:after {
+  border-left: 15px solid transparent;
+  left: -15px;
+}
+.chat-window {
+  bottom: 18px;
+}
+.chat-window-message {
+  width: 100%;
+  padding-left: 1.5em;
+  height: 48px;
+  font: 1em 'Noto Sans', sans-serif;
+  background: url(img/chat.svg) no-repeat;
+  background-size: 1em;
+  color: #fff;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  outline: none;
+}
+@keyframes show-chat-even {
+  0% {
+    margin-left: -480px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@-moz-keyframes show-chat-even {
+  0% {
+    margin-left: -480px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@-webkit-keyframes show-chat-even {
+  0% {
+    margin-left: -480px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes show-chat-odd {
+  0% {
+    margin-right: -480px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+@-moz-keyframes show-chat-odd {
+  0% {
+    margin-right: -480px;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+@-webkit-keyframes show-chat-odd {
+  0% {
+    margin-right: -480px;
+  }
+  100% {
+    margin-right: 0;
+  }
 }
