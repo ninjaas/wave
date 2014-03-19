@@ -9044,3 +9044,7 @@ a.dropdown-toggle:after {
     margin-right: 0;
   }
 }
+.emoji {
+  width: 1.5em;
+  margin: -0.3em 0em;
+}

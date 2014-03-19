@@ -1,0 +1,21 @@
+{
+  "name": "Wave",
+  "main": "index.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ninjaas/wave",
+  "authors": [
+    "Ray Ch <i@iraycd.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "emojify.js": "*"
+  }
+}

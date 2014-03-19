@@ -120,7 +120,7 @@
                     chatNewThread.appendChild(chatNewMessage);
                     chatThread.appendChild(chatNewThread);
                     chatThread.scrollTop = chatThread.scrollHeight;
-
+                    emojify.run();
                     // Clear text value
                     chatWindowMessage.value = '';
                 }

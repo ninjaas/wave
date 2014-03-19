@@ -9,6 +9,7 @@ app.engine('html', cons.swig);
 app.set('view engine', 'swig');
 app.set('views', __dirname + '/views');
 app.use('/static', express.static(__dirname + '/static'));
+app.use('/components', express.static(__dirname + '/bower_components'));
 
 var users = [];
 users.push({ username: 'tobi', position: "CEO", followers : "127", picture : "latest1.png" });
