@@ -8,7 +8,7 @@
         <div class="post-item post-quote boxed">
             <span class="post-label"></span>
             <div class="inner">
-                <div class="post-title"><h2><a href="#" hidefocus="true" style="outline: none;">{{wave.title}}</a></h2></div>
+                <div class="post-title"><h2><a href="/wave/{{loop.index0}}" hidefocus="true" style="outline: none;">{{wave.title}}</a></h2></div>
                 <div class="post-desc">
                     {% if wave.ideas %}
                         <ul> {% for idea in wave.ideas %} <li>{{idea}}</li> {%endfor%}</ul>

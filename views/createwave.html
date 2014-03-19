@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{title}} - Wave{% endblock %}
+{% block addhead %}
+<!-- include libries(jQuery, bootstrap, fontawesome) -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<!-- include summernote css/js-->
+
+<!-- include codemirror (codemirror.css, codemirror.js, xml.js, formatting.js) -->
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.min.css" />
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.min.js"></script>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.5.0/summernote.css" />
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.5.0/summernote.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<div class="boxed col-md-8 col-md-push-2">
+  <div class="summernote">
+  </div>
+</div> 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.summernote').summernote({
+          height: 200,   //set editable area's height
+          codemirror: { // codemirror options
+            theme: 'monokai'
+          },
+            toolbar: [
+    ['style', ['style']], // no style button
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['insert', ['picture', 'link']], // no insert buttons
+    ['help', ['help']] //no help button
+  ]
+        });
+    });
+</script>
+{% endblock %}

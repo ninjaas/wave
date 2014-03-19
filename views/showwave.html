@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}{{title}} - Wave{% endblock %}
+{% block addhead %}
+{% endblock %}
+
+{% block content %}
+
+<div class="widget_calendar boxed">    
+    <div class="inner">
+        <h1><a href="#" >{{title}}</a></h1>
+    </div>
+</div>
+    {% for idea in ideas %}
+        <div class="col-md-7 col-md-push-3 post-item boxed">    
+            <div class="inner">
+                <div class="post-desc">
+                    {{idea}}
+                </div>
+            </div>
+            <ul class="post-meta-links clearfix">
+                <li class="post-meta post-author first"><a href="#" hidefocus="true" style="outline: none;"><span>Edit</span></a></li>
+                <li class="post-meta post-date first"><a href="#" hidefocus="true" style="outline: none;"><span>Jul 15, 2013</span></a></li>
+                <li class="post-meta post-comm"><a href="#" hidefocus="true" style="outline: none;"><span>14 Comments</span></a></li>
+            </ul>
+        </div>
+    {% endfor %}
+
+</script>
+{% endblock %}

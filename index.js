@@ -75,8 +75,38 @@ app.get('/waves',function(req, res){
     title: 'Waves',
     waves: waves,
     chat: chat
-  })
+  });
 })
+
+app.param(function(name, fn){
+  if (fn instanceof RegExp) {
+    return function(req, res, next, val){
+      var captures;
+      if (captures = fn.exec(String(val))) {
+        req.params[name] = captures;
+        next();
+      } else {
+        next('route');
+      }
+    }
+  }
+});
+
+app.get('/wave/create', function(req, res){
+  res.render('createwave.html',{
+    title: "Started Thinking",
+    chat: chat
+  });
+});
+
+app.get('/wave/:id', function(req, res){
+  wave = waves[req.params.id]
+  res.render('showwave.html',{
+    title: wave.title,
+    ideas: wave.ideas,
+    chat: chat
+  });
+});
 
 app.listen(3000);
 console.log('Express server listening on port 3000');

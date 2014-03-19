@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <title>{% block title %}Wave{% endblock %}</title>
 {% block head %}
-
 <!-- main JS libs -->
-<link rel="stylesheet" type="text/css" href="static/style.css">
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+{% endblock %}
+
+{% block addhead %}
 {% endblock %}
 </head>
 <div class="col-md-12">
@@ -46,16 +48,16 @@
       <form class="chat-window">
         <input class="chat-window-message" name="chat-window-message" type="chat" autocomplete="off" autofocus />
       </form>
-      <script type="text/javascript" src="static/js/dummychat.js"></script>
+      <script type="text/javascript" src="/static/js/dummychat.js"></script>
   </div>
 </div>
 
-<script src="components/emojify.js/emojify.min.js"></script>
+<script src="/components/emojify.js/emojify.min.js"></script>
 <script>
     emojify.setConfig({
         emojify_tag_type : 'div',           // Only run emojify.js on this element
         only_crawl_id    : null,            // Use to restrict where emojify.js applies
-        img_dir          : 'components/emojify.js/images/emoji',  // Directory for emoji images
+        img_dir          : '/components/emojify.js/images/emoji',  // Directory for emoji images
         ignored_tags     : {                // Ignore the following tags
             'SCRIPT'  : 1,
             'TEXTAREA': 1,
